@@ -17,7 +17,7 @@
       @endif
       <div class="table-responsive">
         <div class="card-title">
-        <a class="btn btn-sm btn-dark" href="#frmadd" data-toggle="modal" data-url="{{route('add-role')}}" data-id=""><i class="fa fa-plus-circle"></i> नयाँ थप्नुहोस</a>
+        <a class="btn btn-sm btn-dark" href="#frmadd" data-toggle="modal" data-url="{{route('add-role')}}" data-id=""><i class="fa fa-plus-circle"></i> Add New</a>
       </div><br>
         <table class="rtable">
           <thead>

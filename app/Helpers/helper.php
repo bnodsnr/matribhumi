@@ -1,5 +1,7 @@
 <?php
-
+use App\Models\Advertisement;
+use App\Models\Post;
+use App\Models\Category;
 if(! function_exists('getCurrentUser()')) {
   function getCurrentUser() {
     $data  = ['userID' => Auth()->user()->id, 'shakhaID' => Auth()->user()->shakha_id];
@@ -39,5 +41,27 @@ if(!function_exists('pp')) {
     print_r($array);
     echo "</pre>";
     exit;
+  }
+}
+
+if(!function_exists('widgetsAds')) {
+  function widgetsAds( $position ) {
+    $row = Advertisement::where('position',$position)->orderBy('id','desc')->first();
+    if(!empty($row)) {
+      return $row->ads_image;
+    } else {
+      return '';
+    }
+  }
+}
+
+if(!function_exists('getCategoryName')) {
+  function getCategoryName( $slug ) {
+    $row = Category::where('category_slug',$slug)->first();
+    if(!empty($row)) {
+      return $row->category_name;
+    } else {
+      return '';
+    }
   }
 }

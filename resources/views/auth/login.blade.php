@@ -26,7 +26,6 @@
                 <div class="mt-3">
                   <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">SIGN IN</a>
                 </div>
-               
               </form>
             </div>
           </div>

@@ -21950,9 +21950,9 @@ body {
 
 .breadcrumb.breadcrumb-custom .breadcrumb-item {
   font-size: 0.875rem;
-  background: #dbe3e6;
+  background: #77191d;
   padding: 0.56rem 10px;
-  color: #000;
+  color: #fff;
   display: inline-block;
   vertical-align: top;
 }
@@ -21968,7 +21968,7 @@ body {
 .breadcrumb.breadcrumb-custom .breadcrumb-item a {
   position: relative;
   color: inherit;
-  border: 1px solid #dbe3e6;
+  /* border: 1px solid #dbe3e6; */
   display: inline-block;
   vertical-align: top;
 }
@@ -21986,7 +21986,7 @@ body {
 .breadcrumb.breadcrumb-custom .breadcrumb-item a:before {
   right: -22px;
   z-index: 3;
-  border-left-color: #dbe3e6;
+  border-left-color: #77191d;
   border-left-style: solid;
   border-left-width: 12px;
 }
@@ -22000,6 +22000,8 @@ body {
 }
 
 .breadcrumb.breadcrumb-custom .breadcrumb-item span {
+  color: #000;
+  padding-left: 10px;
   display: inline-block;
   vertical-align: top;
 }
@@ -22379,7 +22381,7 @@ body {
 }
 
 .card .card-title {
-  color: #2e294e;
+  color: #000;
   margin-bottom: .25rem;
   text-transform: capitalize;
   font-size: 1.125rem;
@@ -22392,7 +22394,7 @@ body {
 }
 
 .card .card-description {
-  margin-bottom: 2.25rem;
+  /* margin-bottom: 2.25rem; */
   font-weight: 400;
   color: #76838f;
 }
@@ -24831,13 +24833,13 @@ dl li {
 
 .table thead th, .jsgrid .jsgrid-table thead th {
   border-top: 0;
-  border-bottom-width: 1px;
+  border-bottom-width: 1px #000;
   font-weight: 500;
   font-size: 13px;
 }
 
 .table thead th:first-child, .jsgrid .jsgrid-table thead th:first-child {
-  padding-left: 0;
+  padding-left: 12px;
 }
 
 .table thead th i, .jsgrid .jsgrid-table thead th i {
@@ -25067,8 +25069,8 @@ dl li {
 }
 
 .tab-content {
-  border: 1px solid #eeeef0;
-  border-top: 0;
+  border: 1px solid #000;
+  /* border-top: 0; */
   padding: 2rem 1rem;
   text-align: justify;
 }
@@ -28649,7 +28651,7 @@ div.tagsinput span.tag a {
 /* === Landing screens === */
 /* Auth */
 .auth .login-half-bg {
-  background: url("../../images/auth/bg7.jpg");
+  background: url("../../images/bg7.jpg");
   background-size: cover;
 }
 
@@ -28809,7 +28811,7 @@ div.tagsinput span.tag a {
 
 .content-wrapper {
   background: #f3f4f7;
-  padding: 2.5rem 2.5rem;
+  padding: 2.5rem 0.5rem;
   width: 100%;
   -webkit-flex-grow: 1;
   flex-grow: 1;
@@ -28820,7 +28822,7 @@ div.tagsinput span.tag a {
   position: fixed;
   top: 0;
   min-height: 100vh;
-  background: #041750;
+  background: #6b0308e8;
   font-family: "Rubik", sans-serif;
   font-weight: 500;
   padding: 0;
@@ -28859,7 +28861,7 @@ div.tagsinput span.tag a {
   line-height: inherit;
   white-space: nowrap;
   margin-right: 0;
-  padding: 0.3125rem 2rem;
+  padding: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -28884,7 +28886,7 @@ div.tagsinput span.tag a {
   -webkit-align-items: center;
   align-items: center;
   white-space: nowrap;
-  padding: 0.75rem 2rem 0.75rem 2rem;
+  padding: 0.75rem 1rem 0.75rem 1rem;
   color: #f3f7fc;
   -webkit-transition-duration: 0.45s;
   -moz-transition-duration: 0.45s;
@@ -29301,7 +29303,7 @@ div.tagsinput span.tag a {
 }
 
 .navbar .navbar-menu-wrapper {
-  background: #f3f4f7;
+  background: #6885b1;
   transition: width 0.25s ease;
   -webkit-transition: width 0.25s ease;
   -moz-transition: width 0.25s ease;
@@ -30858,7 +30860,8 @@ table td, table th {
 }
 table thead tr {
   height: 50px;
-  background: #36304a;
+  background: #ba4d2d;
+    color: #fff;
 }
 table tbody tr {
   height: 50px;
@@ -30963,8 +30966,9 @@ tbody tr:hover {
 .rtable th {
   font-size: 11px;
   text-align: left;
-  text-transform: uppercase;
-  background: #f2f0e6;
+  /* color:#fff; */
+  /* text-transform: uppercase; */
+  background: #6885b1;
 }
 
 .rtable th,
@@ -32913,4 +32917,24 @@ select.form-control, select.asColorPicker-input, .dataTables_wrapper select, .js
 /* remove default arrow in IE */
 select::-ms-expand {
     display:none;
+}
+
+.breadcrumb-item .active {
+  color:#000;
+}
+
+#sortable {
+  margin: 0 0 15px 0;
+  padding: 0;
+}
+#sortable li {
+  display: block;
+  background-color: lightsteelblue;
+  padding: 10px;
+  border-bottom: 1px solid #fff;
+  cursor: move;
+  cursor: -webkit-grabbing;
+}
+#sortable li.sortable-chosen {
+  background-color: lightslategray;
 }

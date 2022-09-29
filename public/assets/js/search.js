@@ -12,12 +12,10 @@ $(document).ready(function(){
         data : form_data,
         type : "POST",
         beforeSend: function () {
-         obj.find('.search-btn').html('<i class="fa fa-spinner fa-spin"></i> Loading...');
+         obj.find('.save-btn').html('<i class="fa fa-spinner fa-spin"></i> Loading...');
         },
         success: function(resp) {
-         $('.details').html(resp.view);
-         obj.find('.search-btn').html('<i class="fa fa-search"></i> खोज्नुहोस');
-
+          obj.find('.save-btn').html('<i class="fa fa-search"></i> खोज्नुहोस');
         }, 
         error: function() {
           console.log('Internal Server Error!');

@@ -34,7 +34,8 @@
             "app/Helpers/convertnumbers.php",
             "app/Helpers/NepaliCalendar.php",
             "app/Helpers/convertDate.php",
-            "app/Helpers/helper.php"
+            "app/Helpers/helper.php",
+            "app/Helpers/fileUpload.php"
         ]
     },
     "autoload-dev": {

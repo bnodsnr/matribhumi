@@ -15,13 +15,13 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
-            'username'      => 'bmsnepal',
-            'name'          => 'BMS NEPAL',
-            'phone'         => '015233429',
+            'username'      => 'admin',
+            'name'          => 'Admin',
+            'phone'         => '123654789',
             'designation'   => 'owner',
             'status'        => 1,
-            'email'         => 'info@bmsnepal.net',
-            'password'      => bcrypt('bmsnepal'),
+            'email'         => 'info@matribhuni.com',
+            'password'      => bcrypt('admin'),
             'role_id'      => 1
         ]);
     }

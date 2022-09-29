@@ -6,6 +6,13 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\AdvertisementController;
+use App\Http\Controllers\VidoeController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\GeneralOptionController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -19,15 +26,20 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Auth::routes();
+
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('detail/{id}', [HomeController::class, 'show'])->name('detail');
+Route::get('articles/{id}', [HomeController::class, 'category'])->name('articles');
+
 Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('authcheck', [LoginController::class, 'authenticate']);
 Route::post('logout', [LoginController::class, 'logout']);
 
 Route::group(['middleware' => 'auth'], function () {
-  Route::get('/',[DashboardController::class,'index'])->name('dashboard');
+  Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
   Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
-  /*------------------------------------------------------------
+  /*----------------------------------------------------------------
     roles
   ------------------------------------------------------------------*/
   Route::get('roles', [RoleController::class, 'index']);
@@ -54,4 +66,55 @@ Route::group(['middleware' => 'auth'], function () {
   Route::post('save-user',[UserController::class, 'store'])->name('save-user');
   Route::get('edit-user/{id}',[UserController::class,'edit'])->name('edit-user');
   Route::post('/update-user/{id}', [UserController::class,'update'])->name('update-user');
+
+ /*------------------------------------------------------------
+    News Category
+  ---------------------------------------------------------*/
+  Route::get('category', [CategoryController::class,'index'])->name('category');
+  Route::get('create-category',[CategoryController::class,'create'])->name('create-category');
+  Route::post('save-category',[CategoryController::class, 'store'])->name('save-category');
+  Route::get('edit-category',[CategoryController::class,'edit'])->name('edit-category');
+  Route::post('/update-category/{id}', [CategoryController::class,'update'])->name('update-category');
+
+ /*------------------------------------------------------------
+    News 
+  ---------------------------------------------------------*/
+  // Route::get('news', [PostController::class,'index'])->name('news');
+  // Route::get('create-news',[PostController::class,'create'])->name('create-news');
+  // Route::post('save-news',[PostController::class, 'store'])->name('save-news');
+  // Route::get('edit-news/{id}',[PostController::class,'edit'])->name('edit-news');
+  // Route::post('/update-news/{id}', [PostController::class,'update'])->name('update-news');
+
+  Route::get('news', [ArticleController::class,'index'])->name('news');
+  Route::get('create-news',[ArticleController::class,'create'])->name('create-news');
+  Route::post('save-news',[ArticleController::class, 'store'])->name('save-news');
+  Route::get('edit-news/{id}',[ArticleController::class,'edit'])->name('edit-news');
+  Route::post('/update-news/{id}', [ArticleController::class,'update'])->name('update-news');
+
+ /*------------------------------------------------------------
+    Advertisment 
+  ---------------------------------------------------------*/
+  Route::get('manage-ads', [AdvertisementController::class,'index'])->name('manage-ads');
+  Route::get('create-ads',[AdvertisementController::class,'create'])->name('create-ads');
+  Route::post('save-ads',[AdvertisementController::class, 'store'])->name('save-ads');
+  Route::get('edit-ads/{id}',[AdvertisementController::class,'edit'])->name('edit-ads');
+  Route::post('/update-ads/{id}', [AdvertisementController::class,'update'])->name('update-ads');
+
+/*------------------------------------------------------------
+    videos
+  ---------------------------------------------------------*/
+  Route::get('videos', [VidoeController::class,'index'])->name('videos');
+  Route::get('create-videos',[VidoeController::class,'create'])->name('create-videos');
+  Route::post('save-videos',[VidoeController::class, 'store'])->name('save-videos');
+  Route::get('edit-videos/',[VidoeController::class,'edit'])->name('edit-videos');
+  Route::post('/update-videos/{id}', [VidoeController::class,'update'])->name('update-videos');
+  Route::post('/delete-videos/', [VidoeController::class,'update'])->name('delete-videos');
+
+/*------------------------------------------------------------
+    GENERAL OPTION
+  ---------------------------------------------------------*/
+  Route::get('general-option', [GeneralOptionController::class,'index'])->name('general-option');
+  Route::post('reorder-menu', [GeneralOptionController::class,'rearrange'])->name('reorder-menu');
+  Route::post('save-general-option', [GeneralOptionController::class,'SaveGeneralOption'])->name('save-general-option');
+  Route::post('save-social-media', [GeneralOptionController::class,'saveSocialMediaOption'])->name('save-social-media');
 });

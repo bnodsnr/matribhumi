@@ -59,4 +59,9 @@ class User extends Authenticatable
     public function bhumika() {
         return $this->belongsTo(\Spatie\Permission\Models\Role::class, 'role_id');
     }
+
+    public function article() {
+        return hasMany(Article::class);
+    }
+
 }

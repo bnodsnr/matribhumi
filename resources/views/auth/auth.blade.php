@@ -31,11 +31,11 @@
 
             <div class="auth-form-transparent text-left p-3">
               <div class="text-center">
-                <img src="{{ asset('assets/images/new_logo.png') }}" alt="logo">
+                <img src="{{ asset('assets/images/logo.png') }}" alt="logo" />
               </div>
               <br>
-              <h4 class="text-center">ज्वालामूखी गाउँपालिका</h4>
-              <h6 class="font-weight-light text-center">गाउँकार्यपालिकाको कार्यालय, धादिङ, बागमती प्रदेश</h6>
+              <h4 class="text-center">मातृभूमि संचार नेटवर्क</h4>
+              <!-- <h6 class="font-weight-light text-center"></h6> -->
               <hr>
 
               @if ($message = Session::get('success'))

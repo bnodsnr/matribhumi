@@ -1,0 +1,37 @@
+
+// Color Schemas
+
+$theme-ffffff:      #ffffff;
+$theme-000000:      #000000;
+$theme-444444:      #444444;
+$theme-7a7a7a:      #7a7a7a;
+$theme-blue:        #2c368e;
+$theme-l-blue:      #1d272d;
+$theme-red:         #e10f18; 
+$theme-2e2e2e:      #2e2e2e;
+
+
+// Colors - Theme Declaration
+
+.text-gray-800 {
+	color: #2e2e2e!important;
+}
+.text-gray-400 {
+	color: #7a7a7a;
+} 
+.text-blue {
+	color: #2c368e!important;
+} 
+
+.theme-ffffff{
+	color: $theme-ffffff !important;
+}
+.theme-ffffff-bg{
+	background-color: $theme-ffffff !important;
+}
+.theme-000000{
+	color: $theme-000000 !important;
+}
+.theme-000000-bg{
+	background-color: $theme-000000 !important;
+}
